@@ -3,51 +3,53 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Header and Navigation */
 header {
-    background-color: #333;
+    background-color: #222;
     color: white;
     position: sticky;
     top: 0;
-    z-index: 3000; /* Header above the banner */
-    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 4000; /* Ensures nav stays above banner */
+    padding: 15px 20px;
 }
 
-nav .logo {
+.logo {
+    font-size: 1.8em;
     font-weight: bold;
-    font-size: 1.5em;
 }
 
 .menu-toggle {
     display: none;
-    cursor: pointer;
     font-size: 1.8em;
-    z-index: 5000; /* Always on top */
+    cursor: pointer;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-    position: relative;
-    z-index: 5000; /* Above banner */
 }
 
 .nav-links li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #4CAF50;  /* Green hover effect */
 }
 
 /* Banner Styles */
@@ -55,8 +57,7 @@ nav .logo {
     position: relative;
     text-align: center;
     overflow: hidden;
-    height: 300px; /* Adjusted banner size */
-    z-index: 1000; /* Banner stays below nav */
+    height: 200px; /* Adjusted banner size */
 }
 
 .banner img {
@@ -70,37 +71,39 @@ nav .logo {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
     border-radius: 10px;
-    z-index: 2000; /* Text above the banner image */
+    color: white;
+    text-shadow: 1px 1px 5px black;
 }
 
-/* Content Sections */
+/* Section Styles */
 section {
-    padding: 20px;
     background: white;
-    margin: 10px;
+    padding: 20px;
+    margin: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: green;
+    color: #4CAF50;  /* Green headings */
+    margin-bottom: 10px;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #222;
     color: white;
     border: none;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #4CAF50;
 }
 
 /* Responsive Design */
@@ -112,20 +115,21 @@ button:hover {
     .nav-links {
         display: none;
         flex-direction: column;
-        background: #444;
+        background: #333;
         position: absolute;
-        top: 60px;  /* Adjusted for spacing */
-        right: 0;
+        top: 60px;
+        right: 20px;
         width: 200px;
-        z-index: 6000; /* Highest for nav links */
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
     }
 
     .nav-links.show {
         display: flex;
-    }
-
-    .nav-links li {
-        padding: 10px;
-        text-align: center;
     }
 }
