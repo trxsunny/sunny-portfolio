@@ -50,13 +50,16 @@ h2 {
     position: relative;
     text-align: center;
     color: white;
+    overflow: hidden; /* Prevents content from spilling out */
+    max-width: 100%;   /* Makes the banner responsive */
+    height: auto;      /* Adjusts height automatically */
 }
 
 #banner img {
-    width: 100%;
-    height: auto;
-    max-height: 400px; 
-    object-fit: cover;
+    width: 100%;         /* Ensures full-width stretch */
+    height: auto;        /* Maintains aspect ratio */
+    max-height: 534px;   /* Matches original image height */
+    object-fit: cover;   /* Prevents distortion */
 }
 
 .banner-text {
@@ -64,14 +67,15 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    padding: 20px 40px;
+    border-radius: 8px;
 }
 
 .banner-text h1 {
-    font-size: 36px;
+    font-size: 36px; /* Adjust text size */
     margin: 0;
+    font-weight: bold;
 }
 
 .banner-text p {
