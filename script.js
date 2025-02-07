@@ -1,11 +1,11 @@
-// Click Button Animation
+// Button Click Animation
 document.getElementById("clickButton").addEventListener("click", function() {
     var person = document.getElementById("person");
     person.classList.add("showPerson");
 
     setTimeout(function() {
         person.classList.remove("showPerson");
-    }, 4000); // Hides the person after 4 seconds
+    }, 4000); // Hide after 4 seconds
 });
 
 // Hamburger Menu Toggle
