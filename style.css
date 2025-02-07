@@ -7,10 +7,6 @@ body {
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth; /* Smooth scrolling for navigation links */
-}
-
 header {
     background-color: #4CAF50;
     color: white;
@@ -59,7 +55,6 @@ h2 {
     overflow: hidden;
     max-width: 100%;
     height: auto;
-    margin-top: 50px; /* Prevent navbar overlap */
 }
 
 #banner img {
@@ -74,20 +69,15 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better text contrast */
-    padding: 30px 50px;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 8px;
 }
 
 .banner-text h1 {
     font-size: 36px;
     margin: 0;
     font-weight: bold;
-}
-
-.banner-text p {
-    font-size: 18px;
-    margin: 5px 0 0;
 }
 
 /* Navbar Styling */
@@ -123,9 +113,8 @@ h2 {
     transition: background 0.3s;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {  /* Highlight active link */
-    background-color: #4CAF50;
+.nav-links li a:hover {
+    background-color: #555;
     border-radius: 5px;
 }
 
@@ -137,7 +126,7 @@ h2 {
     user-select: none;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -156,10 +145,63 @@ h2 {
     }
 
     .nav-links.show {
-        display: flex; /* Show links when toggled */
+        display: flex;
     }
 
     .menu-toggle {
-        display: block; /* Show hamburger icon on mobile */
+        display: block;
     }
+}
+
+/* Person Animation */
+.person {
+    position: fixed;
+    bottom: -100px;
+    left: -50px;
+    width: 60px;
+    height: 100px;
+    background-color: #ffcc00;
+    border-radius: 50% 50% 0 0;
+    z-index: 999;
+    display: none;
+    transition: all 1s ease-in-out;
+}
+
+.person .head {
+    width: 40px;
+    height: 40px;
+    background-color: #f4c542;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.person .body {
+    width: 40px;
+    height: 50px;
+    background-color: #007bff;
+    margin-top: 5px;
+}
+
+.person .hand {
+    width: 20px;
+    height: 20px;
+    background-color: #f4c542;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    animation: wave 1s infinite;
+}
+
+/* Wave Animation */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.showPerson {
+    display: block;
+    bottom: 20px;
+    left: 20px;
 }

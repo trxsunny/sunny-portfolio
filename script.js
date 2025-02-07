@@ -1,9 +1,15 @@
-// Adding event listener to the button with id "clickButton"
+// Click Button Animation
 document.getElementById("clickButton").addEventListener("click", function() {
-    alert("Hello,Welcome to my portfolio.");
+    var person = document.getElementById("person");
+    person.classList.add("showPerson");
+
+    setTimeout(function() {
+        person.classList.remove("showPerson");
+    }, 4000); // Hides the person after 4 seconds
 });
-// JavaScript for Hamburger Menu Toggle
+
+// Hamburger Menu Toggle
 document.getElementById("menu-toggle").addEventListener("click", function () {
     var navLinks = document.getElementById("nav-links");
-    navLinks.classList.toggle("show");  // Toggle the 'show' class to display/hide the menu
+    navLinks.classList.toggle("show");
 });
