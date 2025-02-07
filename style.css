@@ -9,16 +9,18 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 10px 20px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 2000; /* Makes sure the nav is on top */
 }
 
 nav .logo {
@@ -29,7 +31,8 @@ nav .logo {
 .menu-toggle {
     display: none;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.8em;
+    z-index: 3000; /* Ensures button is clickable above everything */
 }
 
 .nav-links {
@@ -44,14 +47,17 @@ nav .logo {
     font-weight: bold;
 }
 
+/* Banner Styles */
 .banner {
     position: relative;
     text-align: center;
+    overflow: hidden;
+    height: 400px; /* Increased height for a larger banner */
 }
 
 .banner img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -64,6 +70,7 @@ nav .logo {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    z-index: 1500; /* Ensures text appears above the banner */
 }
 
 section {
@@ -98,6 +105,7 @@ button:hover {
     left: -100px;
     font-size: 50px;
     transition: all 1s ease;
+    z-index: 2000; /* Ensure animation is visible above other elements */
 }
 
 .anime-girl.show {
@@ -124,6 +132,7 @@ button:hover {
         top: 60px;
         right: 0;
         width: 200px;
+        z-index: 2500; /* Keep nav links above everything */
     }
 
     .nav-links.show {
