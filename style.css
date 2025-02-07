@@ -55,7 +55,7 @@ nav .logo {
     position: relative;
     text-align: center;
     overflow: hidden;
-    height: 150px; /* Adjusted banner size */
+    height: 250px; /* Adjusted banner size */
     z-index: 1000; /* Banner stays below nav */
 }
 
