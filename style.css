@@ -11,16 +11,17 @@ header {
     color: white;
     position: sticky;
     top: 0;
-    z-index: 3000; /* Higher z-index to stay above banner */
+    z-index: 3000; /* Header above the banner */
     padding: 10px 20px;
 }
 
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 4000; /* Ensures navigation bar stays on top */
+    z-index: 4000; /* Ensures nav stays above banner */
 }
 
 nav .logo {
@@ -32,15 +33,15 @@ nav .logo {
     display: none;
     cursor: pointer;
     font-size: 1.8em;
-    z-index: 5000; /* Menu button always on top */
+    z-index: 5000; /* Always on top */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-    z-index: 5000; /* Navigation links above banner */
     position: relative;
+    z-index: 5000; /* Above banner */
 }
 
 .nav-links li a {
@@ -54,8 +55,8 @@ nav .logo {
     position: relative;
     text-align: center;
     overflow: hidden;
-    height: 250px; /* Adjusted banner size */
-    z-index: 1000; /* Lower than nav */
+    height: 150px; /* Adjusted banner size */
+    z-index: 1000; /* Banner stays below nav */
 }
 
 .banner img {
@@ -73,9 +74,10 @@ nav .logo {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    z-index: 2000; /* Above banner image */
+    z-index: 2000; /* Text above the banner image */
 }
 
+/* Content Sections */
 section {
     padding: 20px;
     background: white;
@@ -112,10 +114,10 @@ button:hover {
         flex-direction: column;
         background: #444;
         position: absolute;
-        top: 60px;
+        top: 60px;  /* Adjusted for spacing */
         right: 0;
         width: 200px;
-        z-index: 6000; /* Highest z-index for nav links */
+        z-index: 6000; /* Highest for nav links */
     }
 
     .nav-links.show {
