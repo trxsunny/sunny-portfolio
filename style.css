@@ -7,58 +7,105 @@ body {
     padding: 0;
 }
 
-h1, h2 {
+header {
+    position: relative;
     text-align: center;
-    color: #4CAF50;
+    color: white;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
 }
 
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#banner img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
-/* Navigation Bar */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+.banner-text h1 {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin: 5px 0 0;
+}
+
+/* Navbar */
 .navbar {
     background-color: #333;
     color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.navbar .logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links a {
+.nav-links li a {
     color: white;
     text-decoration: none;
     padding: 10px;
     transition: background 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links li a:hover {
     background-color: #555;
     border-radius: 5px;
 }
 
-.menu-toggle {
+/* Anime Girl Animation */
+.anime-girl {
+    position: fixed;
+    bottom: -100px;
+    left: -100px;
+    background: #ffcccb;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 24px;
     display: none;
-    font-size: 28px;
-    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: wave 1s infinite alternate;
+}
+
+@keyframes slideIn {
+    from {
+        left: -150px;
+        bottom: -150px;
+    }
+    to {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(20deg); }
 }
 
 /* Responsive Design */
@@ -80,61 +127,7 @@ section {
 
     .menu-toggle {
         display: block;
+        cursor: pointer;
+        font-size: 28px;
     }
-}
-
-/* Animated Person */
-#person {
-    position: fixed;
-    bottom: -150px; /* Start hidden below the screen */
-    left: -100px;   /* Start hidden to the left */
-    width: 60px;
-    height: 100px;
-    background-color: #ffcc00;
-    border-radius: 50% 50% 0 0;
-    z-index: 999;
-    display: none; /* Hidden by default */
-    transition: all 1s ease-in-out;
-}
-
-#person .head {
-    width: 40px;
-    height: 40px;
-    background-color: #f4c542;
-    border-radius: 50%;
-    margin: 5px auto;
-}
-
-#person .body {
-    width: 40px;
-    height: 50px;
-    background-color: #007bff;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-#person .hand {
-    width: 20px;
-    height: 20px;
-    background-color: #f4c542;
-    border-radius: 50%;
-    position: absolute;
-    top: 30px;
-    left: 45px;
-    animation: wave 1s infinite;
-    transform-origin: top left;
-}
-
-/* Wave Animation */
-@keyframes wave {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(20deg); }
-    100% { transform: rotate(0deg); }
-}
-
-/* Show Person */
-.showPerson {
-    display: block;
-    bottom: 20px;
-    left: 20px;
 }
