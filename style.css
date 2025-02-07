@@ -11,7 +11,7 @@ header {
     color: white;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 3000; /* Higher z-index to stay above banner */
     padding: 10px 20px;
 }
 
@@ -20,7 +20,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 2000; /* Makes sure the nav is on top */
+    z-index: 4000; /* Ensures navigation bar stays on top */
 }
 
 nav .logo {
@@ -32,13 +32,15 @@ nav .logo {
     display: none;
     cursor: pointer;
     font-size: 1.8em;
-    z-index: 3000; /* Ensures button is clickable above everything */
+    z-index: 5000; /* Menu button always on top */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    z-index: 5000; /* Navigation links above banner */
+    position: relative;
 }
 
 .nav-links li a {
@@ -52,7 +54,8 @@ nav .logo {
     position: relative;
     text-align: center;
     overflow: hidden;
-    height: 400px; /* Increased height for a larger banner */
+    height: 250px; /* Adjusted banner size */
+    z-index: 1000; /* Lower than nav */
 }
 
 .banner img {
@@ -70,7 +73,7 @@ nav .logo {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    z-index: 1500; /* Ensures text appears above the banner */
+    z-index: 2000; /* Above banner image */
 }
 
 section {
@@ -98,26 +101,6 @@ button:hover {
     background-color: #555;
 }
 
-/* Anime Girl Animation */
-.anime-girl {
-    position: fixed;
-    bottom: -100px;
-    left: -100px;
-    font-size: 50px;
-    transition: all 1s ease;
-    z-index: 2000; /* Ensure animation is visible above other elements */
-}
-
-.anime-girl.show {
-    bottom: 20px;
-    left: 20px;
-    transform: rotate(360deg);
-}
-
-.hidden {
-    display: none;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -132,7 +115,7 @@ button:hover {
         top: 60px;
         right: 0;
         width: 200px;
-        z-index: 2500; /* Keep nav links above everything */
+        z-index: 6000; /* Highest z-index for nav links */
     }
 
     .nav-links.show {
