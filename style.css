@@ -7,6 +7,10 @@ body {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for navigation links */
+}
+
 header {
     background-color: #4CAF50;
     color: white;
@@ -46,20 +50,23 @@ h2 {
 #contact p {
     font-size: 1.2em;
 }
+
+/* Banner Section */
 #banner {
     position: relative;
     text-align: center;
     color: white;
-    overflow: hidden; /* Prevents content from spilling out */
-    max-width: 100%;   /* Makes the banner responsive */
-    height: auto;      /* Adjusts height automatically */
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    margin-top: 50px; /* Prevent navbar overlap */
 }
 
 #banner img {
-    width: 100%;         /* Ensures full-width stretch */
-    height: auto;        /* Maintains aspect ratio */
-    max-height: 534px;   /* Matches original image height */
-    object-fit: cover;   /* Prevents distortion */
+    width: 100%;
+    height: auto;
+    max-height: 534px;
+    object-fit: cover;
 }
 
 .banner-text {
@@ -67,13 +74,13 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
-    padding: 20px 40px;
-    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better text contrast */
+    padding: 30px 50px;
+    border-radius: 10px;
 }
 
 .banner-text h1 {
-    font-size: 36px; /* Adjust text size */
+    font-size: 36px;
     margin: 0;
     font-weight: bold;
 }
@@ -82,6 +89,7 @@ h2 {
     font-size: 18px;
     margin: 5px 0 0;
 }
+
 /* Navbar Styling */
 .navbar {
     background-color: #333;
@@ -115,8 +123,9 @@ h2 {
     transition: background 0.3s;
 }
 
-.nav-links li a:hover {
-    background-color: #555;
+.nav-links li a:hover,
+.nav-links li a.active {  /* Highlight active link */
+    background-color: #4CAF50;
     border-radius: 5px;
 }
 
@@ -131,7 +140,7 @@ h2 {
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;  /* Hide links by default on small screens */
+        display: none;
         flex-direction: column;
         background-color: #333;
         position: absolute;
@@ -147,10 +156,10 @@ h2 {
     }
 
     .nav-links.show {
-        display: flex;  /* Show links when menu is toggled */
+        display: flex; /* Show links when toggled */
     }
 
     .menu-toggle {
-        display: block;  /* Show the hamburger icon on small screens */
+        display: block; /* Show hamburger icon on mobile */
     }
 }
