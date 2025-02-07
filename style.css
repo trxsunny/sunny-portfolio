@@ -1,25 +1,57 @@
-/* Global Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
 }
 
 header {
-    position: relative;
-    text-align: center;
+    background-color: #333;
     color: white;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-#banner img {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+}
+
+.banner img {
     width: 100%;
     height: auto;
-    max-height: 400px;
     object-fit: cover;
 }
 
@@ -28,53 +60,35 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
     background: rgba(0, 0, 0, 0.5);
-    padding: 20px 40px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+section {
+    padding: 20px;
+    background: white;
+    margin: 10px;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.banner-text h1 {
-    font-size: 36px;
-    margin: 0;
-    font-weight: bold;
+h2 {
+    color: green;
 }
 
-.banner-text p {
-    font-size: 18px;
-    margin: 5px 0 0;
-}
-
-/* Navbar */
-.navbar {
+button {
+    padding: 10px 20px;
     background-color: #333;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
+    border: none;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
-.nav-links li a:hover {
+button:hover {
     background-color: #555;
-    border-radius: 5px;
 }
 
 /* Anime Girl Animation */
@@ -82,52 +96,42 @@ header {
     position: fixed;
     bottom: -100px;
     left: -100px;
-    background: #ffcccb;
-    padding: 20px;
-    border-radius: 50%;
-    font-size: 24px;
+    font-size: 50px;
+    transition: all 1s ease;
+}
+
+.anime-girl.show {
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(360deg);
+}
+
+.hidden {
     display: none;
-    transition: all 0.8s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: wave 1s infinite alternate;
-}
-
-@keyframes slideIn {
-    from {
-        left: -150px;
-        bottom: -150px;
-    }
-    to {
-        left: 20px;
-        bottom: 20px;
-    }
-}
-
-@keyframes wave {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(20deg); }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #333;
+        background: #444;
         position: absolute;
-        top: 50px;
-        right: 20px;
-        width: 150px;
-        border-radius: 5px;
+        top: 60px;
+        right: 0;
+        width: 200px;
     }
 
     .nav-links.show {
         display: flex;
     }
 
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 28px;
+    .nav-links li {
+        padding: 10px;
+        text-align: center;
     }
 }
